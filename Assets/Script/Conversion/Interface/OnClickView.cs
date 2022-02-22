@@ -14,6 +14,16 @@ public class OnClickView : CalculatoOnClck
     private static string CHEAR_MESSAGE;  //CHEAR_MESSAGE;
     private static int CHEAR_STATUS;    // CHEAR_STATUS
 
+
+    ~OnClickView()
+    {
+        CHEAR_STATUS = 0;
+        active = false;
+        PROCESS = "";
+        RESULT = "";
+        VALUE = null;
+    }
+
     // 計算過程
     public static string RESULT_PROCESS()
     {
@@ -68,7 +78,11 @@ public class OnClickView : CalculatoOnClck
 
     public void chearClick()
     {
-        throw new System.NotImplementedException();
+        CHEAR_STATUS = 0;
+        active = false;
+        PROCESS = "";
+        RESULT = "";
+        VALUE = null;
     }
 
     public void eightClick()
