@@ -7,10 +7,9 @@ public class OnClickView : CalculatoOnClck
     private bool active = false;
 
     // 顯示計算過程
-    private static string PROCESS, RESULT, VALUE;
+    private static string PROCESS, RESULT, VALUE, PROCESS_NUMBER;
 
     private static double A, SUM;   
-    private bool acrive = false;
     private static string CHEAR_MESSAGE;  //CHEAR_MESSAGE;
     private static int CHEAR_STATUS;    // CHEAR_STATUS
 
@@ -22,6 +21,7 @@ public class OnClickView : CalculatoOnClck
         PROCESS = "";
         RESULT = "";
         VALUE = null;
+        PROCESS_NUMBER = "";
     }
 
     // 計算過程
@@ -55,11 +55,14 @@ public class OnClickView : CalculatoOnClck
             active = false;
         }
 
-        if (RESULT == null || RESULT == "")    
-            PROCESS += conNumber;            
-        else   
-            PROCESS = RESULT + CHEAR_MESSAGE + conNumber;
-        
+        if (RESULT == null || RESULT == "")
+            PROCESS += conNumber;
+        else
+        {
+            PROCESS_NUMBER += conNumber;
+            PROCESS = RESULT + CHEAR_MESSAGE + PROCESS_NUMBER;
+        }
+
         VALUE += conNumber;
     }
 
@@ -83,6 +86,7 @@ public class OnClickView : CalculatoOnClck
         PROCESS = "";
         RESULT = "";
         VALUE = null;
+        PROCESS_NUMBER = "";
     }
 
     public void eightClick()
